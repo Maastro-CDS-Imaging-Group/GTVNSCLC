@@ -1,0 +1,29 @@
+# PROCESSING PARAM.S
+proc:
+  # number of cores to use
+  cpu_cores: 8
+  
+
+# DATA INFORMATION
+data:
+  # main data folder - where everything data is located
+  base_path: '../data/'
+  
+  # preprocessed data folder - where all the byproducts of the pipeline are stored
+  preproc_base_path: '../data/processed/'
+    
+  # name of the subfolder, under each patient folder, where the segmentation masks 
+  # (inferred by the pipeline, resampled, converted to NRRD) are stored
+  pred_segmasks_folder_name: "rt_segmasks"
+
+  # name of the JSON file storing metadata for the DICOM SEG conversion
+  metadata_json_name: "dicomseg_metadata_lungmask.json"
+
+  
+
+
+# GENERAL DATASET INFORMATION
+dataset:
+  # name of the dataset - can be used for logging purposes
+  name: 'GTVNSCLC'
+  

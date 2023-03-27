@@ -1,0 +1,47 @@
+# PROCESSING PARAM.S
+proc:
+  # number of cores to use
+  cpu_cores: 8
+
+
+# DATA INFORMATION
+data:
+
+  #Top folder that contains the BMS project
+  base_path: '/Volumes/MYDRIVE/Maastro/Data/p0484-risk-ms-st3-nsclc/'
+
+  # preprocessed data folder - where all the converted nrrd files are stored
+  nrrd_base_path: '/Volumes/MYDRIVE/Maastro/Data/p0484-risk-ms-st3-nsclc/processed/nrrd/'
+
+  # name of the subfolder, under each patient folder, where the segmentation masks
+  # (inferred by the pipeline, resampled, converted to NRRD) are stored
+  pred_segmasks_folder_name: "rt_binarymasks"
+
+  # name of the ROIs from which the radiomic features will be extracted from
+  rois_to_input: ["GTV"]
+
+  # Excluded patients (for example missing files, ROIs)
+  #List of excluded patients without GTVp1
+  #excluded_patients: ["P0484C0006I13347712","P0484C0006I13348105","P0484C0006I13349751","P0484C0006I13352429","P0484C0006I13353173","P0484C0006I13358312","P0484C0006I13359183","P0484C0006I13362784","P0484C0006I13363429","P0484C0006I13364175","P0484C0006I13365895","P0484C0006I13366119","P0484C0006I13369845","P0484C0006I1902800","P0484C0006I3078632","P0484C0006I4221336","P0484C0006I5394488","P0484C0006I5822367","P0484C0006I59369","P0484C0006I6553728","P0484C0006I7903295","P0484C0006I8868250"]
+  #List of excluded patients without GTVnsum
+  #excluded_patients: ["P0484C0006I13347331","P0484C0006I13347539","P0484C0006I13349927","P0484C0006I13351656","P0484C0006I13352562","P0484C0006I13352595","P0484C0006I13352907","P0484C0006I13354939","P0484C0006I13354987","P0484C0006I13355627","P0484C0006I13356256","P0484C0006I13357020","P0484C0006I13357957","P0484C0006I13362687","P0484C0006I13365669","P0484C0006I13366348","P0484C0006I13366557","P0484C0006I13367199","P0484C0006I13367213","P0484C0006I13367610","P0484C0006I13368733","P0484C0006I13369197","P0484C0006I1464723","P0484C0006I18991","P0484C0006I400173","P0484C0006I4727106","P0484C0006I5877329","P0484C0006I6960259","P0484C0006I7964928","P0484C0006I8108763"]
+  excluded_patients: [] 
+
+  
+
+
+# extraction INFORMATION
+radiomics:
+  # name of the config file that configures feature extraction
+  config_path: '/Users/albitraverso/WorkspaceMaastro/P0484_GTV_NSCLC/src/configs_radiomics_extraction_GTVNSCLC.yaml'
+
+  # name of base ouput folder where the radiomic features, for each patient and for each ROI will be stored
+  radiomics_out_path: '/Users/albitraverso/WorkspaceMaastro/P0484_GTV_NSCLC/analysis/' 
+
+
+
+
+# GENERAL DATASET INFORMATION
+dataset:
+  # name of the dataset - can be used for logging purposes
+  name: 'GTVNSCLC_SNUH'
